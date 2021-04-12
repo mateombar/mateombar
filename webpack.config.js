@@ -63,6 +63,7 @@ module.exports = {
       hash: true,
       template: "./public/index.html",
       filename: "index.html",
+      favicon: "./src/assets/img/rocket.png"
     }),
   ],
 };
