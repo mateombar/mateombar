@@ -1,7 +1,6 @@
 @import "../../styles/variables.scss";
 .banner {
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   position: relative;
@@ -12,11 +11,7 @@
 }
 
 .banner::after {
-  content: "";
-  background-image: url("../../assets/svg/banner__background.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  content: url("../../assets/svg/banner__background.svg");
   position: absolute;
   top: 0;
   left: 0;
@@ -59,6 +54,21 @@
   width: 100%;
 }
 
+@media screen and (min-width: 1500px) {
+  .banner::after {
+    content: "";
+    position: absolute;
+    background-image: url("../../assets/svg/banner__background.svg");
+    background-color: $positive-color;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+}
 @media screen and (min-width: 900px) {
   .banner__container {
     max-width: 1200px;

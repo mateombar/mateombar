@@ -7,6 +7,14 @@ const App = () => {
   return (
     <main>
       <Banner/>
+      <h1>HOLA</h1>
+      <h1>HOLA</h1>
+      <h1>HOLA</h1>
+      <h1>HOLA</h1>
+      <h1>HOLA</h1>
+      <h1>HOLA</h1>
+      <h1>HOLA</h1>
+      <h1>HOLA</h1>
     </main>
   );
 }
