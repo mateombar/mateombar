@@ -1,0 +1,35 @@
+@import "../../styles/variables.scss";
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  z-index: 100;
+  margin: 0%;
+  .navbar__container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .navbar__logo {
+      display: flex;
+      align-items: center;
+      img {
+        width: 48.56px;
+      }
+      span {
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 35px;
+        color: #fff;
+      }
+      span::after {
+        content: ".";
+        color: $negative-color;
+      }
+    }
+  }
+}
