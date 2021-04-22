@@ -6,17 +6,19 @@
   position: absolute;
   overflow: hidden;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   margin: 0%;
   .navbar__container {
+    max-width: 1200px;
     width: 100%;
     padding: 20px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     .navbar__logo {
       display: flex;
       align-items: center;
+      cursor: pointer;
       img {
         width: 48.56px;
       }
@@ -25,11 +27,103 @@
         font-size: 30px;
         line-height: 35px;
         color: #fff;
+        transition: .3s all ease;
+      }
+      span:hover {
+        color: $negative-color;
       }
       span::after {
         content: ".";
         color: $negative-color;
       }
+    }
+    .navbar__links {
+      width: 100%;
+      padding: 0;
+      list-style: none;
+      display: none;
+    }
+    .navbar__menu {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      transform: translate(0, 20%);
+      img {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+      }
+    }
+  }
+  .navbar__container--active {
+    height: 100vh;
+    overflow: hidden;
+    background: $positive-color;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    .navbar__links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      height: 100%;
+      .link {
+        width: 100%;
+        padding-top: 10px;
+        text-align: center;
+        padding: 10px 0;
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  // .navbar__container::before {
+  //   content: "";
+  //   position: absolute;
+  //   right: 20px;
+  //   top: 50%;
+  //   transform: translate(0, -50%);
+  //   background-image: url("../../assets/svg/hamurger.svg");
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   width: 32px;
+  //   height: 32px;
+  //   cursor: pointer;
+  // }
+}
+
+@media screen and (min-width: 600px) {
+  .navbar {
+    .navbar__container {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      .navbar__links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        .link {
+          padding-top: 0px;
+          padding-left: 30px;
+          a {
+            color: #fff;
+            text-decoration: none;
+            transition: .3s all ease;
+          }
+          a:hover {
+            color: $negative-color;
+          }
+        }
+      }
+    }
+    .navbar__menu {
+      display: none;
     }
   }
 }
