@@ -11,7 +11,6 @@
   .navbar__container {
     max-width: 1200px;
     width: 100%;
-    padding: 20px;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -19,6 +18,7 @@
       display: flex;
       align-items: center;
       cursor: pointer;
+      padding: 20px;
       img {
         width: 48.56px;
       }
@@ -27,7 +27,7 @@
         font-size: 30px;
         line-height: 35px;
         color: #fff;
-        transition: .3s all ease;
+        transition: 0.3s all ease;
       }
       span:hover {
         color: $negative-color;
@@ -38,10 +38,55 @@
       }
     }
     .navbar__links {
-      width: 100%;
       padding: 0;
       list-style: none;
       display: none;
+      padding: 20px;
+      transition: 0.6s;
+      .link {
+        width: 100%;
+        padding-top: 10px;
+        text-align: center;
+        padding: 10px 0;
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+    .navbar__links--active {
+      width: 100%;
+      height: calc(100vh - 88.5667px);
+      background: $positive-color;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      -webkit-animation-name: fadeInLeft;
+      animation-name: fadeInLeft;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+    .navbar__links--deactive {
+      width: 100%;
+      height: calc(100vh - 88.5667px);
+      background: $positive-color;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      -webkit-animation-name: fadeOutLeft;
+      animation-name: fadeOutLeft;
+      -webkit-animation-duration: 0.4s;
+      animation-duration: 0.4s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
     }
     .navbar__menu {
       position: absolute;
@@ -55,47 +100,71 @@
       }
     }
   }
-  .navbar__container--active {
-    height: 100vh;
-    overflow: hidden;
-    background: $positive-color;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    .navbar__links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      height: 100%;
-      .link {
-        width: 100%;
-        padding-top: 10px;
-        text-align: center;
-        padding: 10px 0;
-        a {
-          color: #fff;
-          text-decoration: none;
-        }
-      }
+  .fadeInLeft {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
     }
   }
-  // .navbar__container::before {
-  //   content: "";
-  //   position: absolute;
-  //   right: 20px;
-  //   top: 50%;
-  //   transform: translate(0, -50%);
-  //   background-image: url("../../assets/svg/hamurger.svg");
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   width: 32px;
-  //   height: 32px;
-  //   cursor: pointer;
-  // }
+  @keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  .fadeOutLeft {
+    -webkit-animation-name: fadeOutLeft;
+    animation-name: fadeOutLeft;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeOutLeft {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+  @keyframes fadeOutLeft {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
 }
-
+.navbar--menu{
+  position: fixed;
+  background: $positive-color;
+}
 @media screen and (min-width: 600px) {
   .navbar {
     .navbar__container {
@@ -103,18 +172,19 @@
       align-items: center;
       justify-content: space-between;
       .navbar__links {
+        padding: 0;
+        padding-right: 20px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: flex-end;
-        width: 100%;
         .link {
           padding-top: 0px;
           padding-left: 30px;
           a {
             color: #fff;
             text-decoration: none;
-            transition: .3s all ease;
+            transition: 0.3s all ease;
           }
           a:hover {
             color: $negative-color;
