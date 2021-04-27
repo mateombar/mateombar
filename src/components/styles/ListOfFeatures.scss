@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+.feature {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 345px;
+  width: 100%;
+  .feature__image {
+    width: 140px;
+    height: 140px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: $positive-color;
+    position: relative;
+    box-sizing: border-box;
+    img {
+      width: 80px;
+      position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+  }
+  p {
+    color: $dark-text;
+    font-size: $subtitle-size;
+    text-align: center;
+  }
+}

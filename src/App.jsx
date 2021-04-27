@@ -3,6 +3,7 @@ import './App.scss';
 
 import { Navbar } from './components/Navbar';
 import { Banner } from './components/Banner';
+import { About } from './components/About';
 
 const App = () => {
   return (
@@ -10,10 +11,7 @@ const App = () => {
       <Navbar />
       <main>
         <Banner />
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
+        <About/>
       </main>
     </>
   );

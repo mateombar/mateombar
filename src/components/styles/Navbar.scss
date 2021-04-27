@@ -14,11 +14,12 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    padding: 0 30px;
     .navbar__logo {
       display: flex;
       align-items: center;
       cursor: pointer;
-      padding: 20px;
+      padding: 20px 0;
       img {
         width: 48.56px;
       }
@@ -90,7 +91,7 @@
     }
     .navbar__menu {
       position: absolute;
-      right: 20px;
+      right: 30px;
       top: 20px;
       transform: translate(0, 20%);
       img {
@@ -161,9 +162,16 @@
     }
   }
 }
-.navbar--menu{
+.navbar--menu {
   position: fixed;
   background: $positive-color;
+}
+@media screen and (min-width: 700px) {
+  .navbar {
+    .navbar__container {
+      padding: 0 60px;
+    }
+  }
 }
 @media screen and (min-width: 600px) {
   .navbar {
@@ -173,7 +181,6 @@
       justify-content: space-between;
       .navbar__links {
         padding: 0;
-        padding-right: 20px;
         display: flex;
         flex-direction: row;
         align-items: center;
