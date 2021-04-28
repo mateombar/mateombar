@@ -12,25 +12,29 @@ export const Projects = () => {
             id: 1,
             image: amano,
             title: 'Amano Store',
-            description: 'A basic store example'
+            description: 'A basic store example',
+            pageUrl: 'https://amano-store.web.app/',
         },
         {
             id: 2,
             image: pokedex,
             title: 'Pokedex',
-            description: 'Find the pokemons you like, save them to your favorites list and share them to your friends'
+            description: 'Find the pokemons you like, save them to your favorites list and share them to your friends',
+            pageUrl: 'https://pokedex-vue-a2a13.web.app/',
         },
         {
             id: 3,
             image: petgram,
             title: 'Petgram',
-            description: 'The perfect social network for your pets, create an example account and enjoy'
+            description: 'The perfect social network for your pets, create an example account and enjoy',
+            pageUrl: 'https://petgram-server-mateombar-mateombar.vercel.app/',
         },
         {
             id: 4,
             image: rockers,
             title: 'Rockers',
-            description: 'My first React and Firestore application. Find the rockers you like or create your own'
+            description: 'My first React and Firestore application. Find the rockers you like or create your own',
+            pageUrl: 'https://rockers-c5e8f.firebaseapp.com/rockers',
         },
     ]
     const [projects, setProjects] = useState([]);
@@ -41,11 +45,11 @@ export const Projects = () => {
         <section className="projects">
             <div className="projects__container">
                 <h3>Projects</h3>
-                    {
-                        projects.map(project => (
-                            <Project key={project.id} project={project} />
-                        ))
-                    }
+                {
+                    projects.map(project => (
+                        <Project key={project.id} project={project} />
+                    ))
+                }
             </div>
         </section>
     )
