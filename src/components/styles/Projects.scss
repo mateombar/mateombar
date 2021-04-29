@@ -10,6 +10,9 @@
     padding: 30px;
     h3 {
       color: $dark-text;
+      text-align: left;
+      font-size: $subtitle-size;
+      font-weight: 500;
     }
   }
 }
@@ -17,8 +20,16 @@
 @media screen and (min-width: 700px) {
   .projects {
     .projects__container {
+      box-sizing: border-box;
       padding: 30px 60px;
       max-width: 1200px;
+      width: 100%;
+      .projects__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
     }
   }
 }

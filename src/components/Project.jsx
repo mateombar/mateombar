@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNearScreen } from '../hooks/useNearScreen';
 import './styles/Project.scss';
+import github from '../assets/svg/github.svg';
+import forward from '../assets/svg/forward.svg';
 export const Project = ({ project }) => {
     const [show, refElement] = useNearScreen();
     return (
@@ -14,6 +16,14 @@ export const Project = ({ project }) => {
                         <h2>{project.title}</h2>
                         <p>{project.description}</p>
                     </div>
+                    <nav className="project__links">
+                        <a href={project.github} className="link" target="_blank">
+                            <img src={github} alt="github" />
+                        </a>
+                        <a href={project.pageUrl} className="link" target="_blank">
+                            <img src={forward} alt="webpage redirection" />
+                        </a>
+                    </nav>
                 </div>
             }
         </article>
