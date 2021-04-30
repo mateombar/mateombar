@@ -28,7 +28,7 @@ export const About = () => {
     }, []);
     if (!features.length) return <div>Loading ...</div>
     return (
-        <section className="about">
+        <section className="about" id="about">
             <article className="about__info">
                 <h3>About</h3>
                 <h1>I'm a ambitious <span>Frontend Developer</span> who wants to do great things</h1>

@@ -46,7 +46,7 @@ export const Projects = () => {
         setProjects([...data]);
     }, []);
     return (
-        <section className="projects">
+        <section className="projects" id="projects">
             <div className="projects__container">
                 <h3>Projects</h3>
                 <div className="projects__list">
