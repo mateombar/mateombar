@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 
-export const useNearScreen = () => {
+export const useNearScreen = (isDisconnect = true) => {
   const refElement = useRef(null);
   const [show, setShow] = useState(false);
   useEffect(() => {
@@ -13,7 +13,11 @@ export const useNearScreen = () => {
         const { isIntersecting } = entries[0];
         if (isIntersecting) {
           setShow(true);
-          observer.disconnect();
+          if (isDisconnect) {
+            observer.disconnect();
+          }
+        } else {
+          setShow(false);
         }
       });
       observer.observe(refElement.current);
