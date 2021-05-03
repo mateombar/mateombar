@@ -10,7 +10,6 @@ export const ListOfFeatures = ({ features }) => {
         </article>
 
     ))
-    console.log(listOfFeatures);
     return (
         <>
             {listOfFeatures}
