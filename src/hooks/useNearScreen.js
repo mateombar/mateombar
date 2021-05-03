@@ -6,8 +6,8 @@ export const useNearScreen = (isDisconnect = true) => {
   useEffect(() => {
     Promise.resolve(
       typeof window.IntersectionObserver !== "undefined"
-        ? window.IntersectionObserver
-        : import("intersection-observer")
+        && window.IntersectionObserver
+        // : import("intersection-observer")
     ).then(() => {
       const observer = new window.IntersectionObserver((entries) => {
         const { isIntersecting } = entries[0];
